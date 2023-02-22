@@ -102,7 +102,7 @@
                         </goals>
 
                         <!-- optional: default phase is "generate-resources" -->
-                        <phase>generate-resources</phase>
+                        <phase>pre-integration-test</phase>
 
                         <configuration>
                             <!-- optional: The default argument is actually
@@ -119,7 +119,7 @@
                         </goals>
 
                         <!-- optional: default phase is "generate-resources" -->
-                        <phase>test</phase>
+                        <phase>integration-test</phase>
 
                         <configuration>
                             <!-- optional: The default argument is actually
