@@ -193,7 +193,13 @@ public class JavaToTsTypeConverter {
 
     return typeArguments.stream()
         .map(this::getTypeOrTypeRef)
-        .map(typeMirror -> toTsType(typeMirror, true))
+        .map(
+            typeMirror -> {
+              TsType tsType = toTsType(typeMirror, true);
+              boolean jsNullable = TsElement.of(typeMirror, env).isJsNullable();
+              tsType.nullable(jsNullable);
+              return tsType;
+            })
         .collect(Collectors.toList());
   }
 
