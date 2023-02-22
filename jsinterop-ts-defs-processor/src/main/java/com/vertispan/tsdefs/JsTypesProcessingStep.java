@@ -136,7 +136,7 @@ public class JsTypesProcessingStep implements ProcessingStep, HasProcessorEnv {
       resource =
           processingEnv
               .getFiler()
-              .createResource(StandardLocation.SOURCE_OUTPUT, "", moduleName + ".d.ts");
+              .createResource(StandardLocation.CLASS_OUTPUT, "", moduleName + ".d.ts");
       try (PrintWriter writer = new PrintWriter(resource.openOutputStream())) {
         writer.print("// Minimum TypeScript Version: 4.3\n");
         writer.print(tsModuleBuilder.build().emit());
