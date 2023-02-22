@@ -16,7 +16,7 @@ jobs:
         with:
           java-version: ${{ matrix.java-version }}
           distribution: 'temurin'
-      - run: mvn verify
+      - run: mvn verify -B
 
   deploy:
     needs: verify
